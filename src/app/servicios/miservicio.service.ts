@@ -108,19 +108,17 @@ export class MiservicioService {
     //     });          
     //     localStorage.setItem("peliculas",JSON.stringify(this.peliculas));
     //   }, error => console.log("error" + error));
-  }
+  }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 
   public getPaises()
   {
     let paises = new Array<any>();
 
-    return this.http.get(this.paises).subscribe(response => {
-      Object.keys(response).map(key => response[key]).forEach( element => {
-          paises.push(JSON.parse(element));
-        });          
-        localStorage.setItem("paises",JSON.stringify(paises));
-      }, error => console.log("error" + error));
-      
+    this.http.get(this.paises).subscribe(resultado => {
+      localStorage.setItem("paises",JSON.stringify(resultado));
+    }, error => {
+      console.log("error")
+    });
   }
 
   // Metodo para realizar un post a una API REST

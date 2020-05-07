@@ -10,6 +10,7 @@ export class TablaPaisesComponent implements OnInit {
   public paises = new Array<any>();
 
   constructor(private servicio: MiservicioService) { 
+    this.servicio.getPaises();
     this.paises = JSON.parse(localStorage.getItem("paises"));
   }
 
