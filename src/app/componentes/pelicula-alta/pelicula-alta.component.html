@@ -1,0 +1,102 @@
+<div class="jumbotron jumbotron-fluid bg-light">
+    <div class="container">
+            <h1 class="display-3">Cargar una pelicula</h1>
+            <hr>
+            <button type="button" class="btn-lg btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Cargar nueva pelicula
+             </button>
+    </div>
+  </div>
+  
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Alta pelicula</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+                    </div>
+                    <input type="text" [(ngModel)]='pelicula.nombre' class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Fecha de estreno</span>
+                    </div>
+                    <input type="date" [(ngModel)]='pelicula.fechaEstreno' class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Público</span>
+                    </div>
+                    <input type="number" [(ngModel)]='pelicula.cantidadPublico' class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                
+                <div class="form-group mb-3">                    
+                    <hr>
+                    <span>Subir pelicula</span>
+                    <button type="file" class="btn btn-outline-dark btn-block">
+                    <input type="file" class="form-control-file"></button>
+                    <hr>
+                </div>
+                <!-- Genero -->
+                 
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Comedia</span>
+                    </div>
+                    <div class="input-group-text">
+                        <input type="radio" aria-label="Radio button for following text input">
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Terror</span>
+                    </div>
+                    <div class="input-group-text">
+                        <input type="radio" aria-label="Radio button for following text input">
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Amor</span>
+                    </div>
+                    <div class="input-group-text">
+                        <input type="radio" aria-label="Radio button for following text input">
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Otros</span>
+                    </div>
+                    <div class="input-group-text">
+                        <input  type="radio" aria-label="Radio button for following text input">
+                    </div>
+                </div>
+            </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)='altaPelicula()'>Save changes</button>
+        </div>
+
+    </div>
+    </div>
+</div>

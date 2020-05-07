@@ -1,0 +1,13 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-3">Listado</h1>
+      <p class="lead">Listado con todas las peliculas</p>
+      <hr>
+    </div>
+ 
+<app-tabla (enviarPelicula)='TraerPelicula($event)' [listado]='listado'></app-tabla>
+<hr>
+  <div *ngIf='!peliculaSeleccionada'>
+   <app-detalle-pelicula [pelicula]='peliculaSeleccionada'></app-detalle-pelicula>
+  </div>
+</div>
