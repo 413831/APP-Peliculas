@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pais } from 'src/app/clases/Pais';
 
 @Component({
   selector: 'app-paises-listado',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./paises-listado.component.css']
 })
 export class PaisesListadoComponent implements OnInit {
-
+  public pais : Pais;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  seleccionarPais(pais: Pais)
+  {
+    console.log(pais);
+    this.pais = pais;
   }
 
 }

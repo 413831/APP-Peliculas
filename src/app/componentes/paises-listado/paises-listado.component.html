@@ -5,5 +5,5 @@
       <hr>
     </div>
 
-<app-tabla-paises></app-tabla-paises>
-       
+<app-tabla-paises (enviarPais)='seleccionarPais($event)'></app-tabla-paises>
+<app-detalle-pais [pais]='pais'></app-detalle-pais>

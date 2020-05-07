@@ -1,17 +1,14 @@
-<div class="container ">
-    <div class="row m-5 justify-content-center">
-      <div class="card text-white bg-dark mb-3 " style="width: 18rem;">
-        <img [src]="pais.flag" class="card-img-top" alt="...">
-        <h5 class="card-header border-light">{{pais.name}}</h5>
-  
-        <div class="card-body border-light">
-          <p class="card-text">Esta es una pelicula muy divertida para ver con tu perro o gato.</p>
-        </div>
-        <div class="card-body border-light" *ngFor='let atributo of pais'>
-          <p class="card-text ">{{atributo}}</p>
-        </div>
-        <div class="card-footer border-light">
-        </div>
+
+<div *ngIf='pais' class="container ">
+  <div class="row m-5 justify-content-center">
+    <div class="card text-dark bg-light mb-3 " style="width: 18rem;">
+      <img [src]="pais.flag" class="card-img-top " alt="...">
+
+      <div class="card-body border-light">
+        <p>Nombre: {{pais.nombre}}</p>
+        <p>Capital: {{pais.capital}}</p>
+        <p>Region: {{pais.subregion}}</p>
       </div>
     </div>
   </div>
+</div>
