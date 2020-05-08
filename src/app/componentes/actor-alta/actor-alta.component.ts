@@ -31,6 +31,7 @@ export class ActorAltaComponent implements OnInit {
 
   alta(){
     this.servicio.crearActor(this.actor);
+    console.log(this.actor);
   }
 
 }

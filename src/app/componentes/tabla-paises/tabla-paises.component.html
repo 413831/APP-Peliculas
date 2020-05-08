@@ -10,7 +10,7 @@
             <tbody>
                 <tr *ngFor="let pais of paises" (click)='seleccionarPelicula(pais)'>
                     <td> <h2> {{pais.nombre}} </h2></td>
-                    <td> <img [src]="pais.flag" alt="bandera" class="img-fluid img-thumbnail w-40 h-40"></td>
+                    <td> <img [src]="pais.flag" alt="bandera" class="w-25 p-3 h-5"></td>
                 </tr>
 
             </tbody>
