@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment';
 import * as firebase from 'firebase';
 import { Pelicula } from '../clases/Pelicula';
 import { Pais } from '../clases/Pais';
+import { Actor } from '../clases/Actor';
 
 
 @Injectable({
@@ -51,6 +52,13 @@ export class MiservicioService {
         }).catch((e) => console.info("No se pudo actualizar: "+ e));
   }
 
+  public crearActor(actor: Actor){
+    this.database.ref('actores').push(actor)
+                  .then(() => console.log("Alta realizada"))
+                  .catch((e) => console.log("Ocurrio un error" + e));
+  }
+
+  
   // Se traen todos los datos de la base de datos Firebase
   public read() : Pelicula[]
   {

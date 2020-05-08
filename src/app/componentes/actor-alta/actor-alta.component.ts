@@ -29,4 +29,8 @@ export class ActorAltaComponent implements OnInit {
     this.actor.paisOrigen = pais.nombre;
   }
 
+  alta(){
+    this.servicio.crearActor(this.actor);
+  }
+
 }
