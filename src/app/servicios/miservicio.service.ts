@@ -130,8 +130,8 @@ export class MiservicioService {
   }
 
   public removeLocal(pais: Pais){
-    this.localPaises = JSON.parse(localStorage.getItem("paises"))
-            .filter( element => element.name != pais.nombre);
+    this.localPaises = JSON.parse(localStorage.getItem("paises"));
+    this.localPaises = this.localPaises.filter( element => element.name != pais.nombre);
     localStorage.setItem('paises',JSON.stringify(this.localPaises));
     console.log("Remove array:"+this.localPaises);
   }
