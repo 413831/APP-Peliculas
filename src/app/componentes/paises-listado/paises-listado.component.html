@@ -5,5 +5,5 @@
       <hr>
     </div>
 
-<app-tabla-paises (enviarPais)='seleccionarPais($event)'></app-tabla-paises>
-<app-detalle-pais [pais]='pais'></app-detalle-pais>
+<app-tabla-paises [paises]='paises' (enviarPais)='seleccionarPais($event)'></app-tabla-paises>
+<app-detalle-pais [pais]='pais' (deshabilitarPais)='bajaPais($event)'></app-detalle-pais>

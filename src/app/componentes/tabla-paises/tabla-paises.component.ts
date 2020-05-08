@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { MiservicioService } from 'src/app/servicios/miservicio.service';
 import { Pais } from 'src/app/clases/Pais';
 
@@ -8,16 +8,11 @@ import { Pais } from 'src/app/clases/Pais';
   styleUrls: ['./tabla-paises.component.css']
 })
 export class TablaPaisesComponent implements OnInit {
-  public paises:Pais[];
+  @Input() public paises:Pais[];
   @Output() enviarPais: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private servicio: MiservicioService) { 
-    this.paises = [];
-    this.servicio.getPaises();
-    JSON.parse(localStorage.getItem("paises")).forEach( element => {
-      this.paises.push(new Pais(element.name, element.flag, element.capital, 
-                              element.languages, element.subregion ));
-    });
+  constructor() { 
+    
   }
 
   ngOnInit(): void {

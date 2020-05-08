@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import * as firebase from 'firebase';
 import { Pelicula } from '../clases/Pelicula';
+import { Pais } from '../clases/Pais';
 
 
 @Injectable({
@@ -12,6 +13,7 @@ export class MiservicioService {
   private Peliculas: Pelicula[] = [];
   private database;
   private paises = environment.urlPaises;
+  private localPaises: Array<any>;
 
   constructor(private http: HttpClient) {
     this.init();
@@ -119,6 +121,19 @@ export class MiservicioService {
     }, error => {
       console.log("error")
     });
+  }
+
+  public getLocal() {
+      console.info("GET localstorage");
+      this.localPaises = JSON.parse(localStorage.getItem("paises"));
+      return this.localPaises; 
+  }
+
+  public removeLocal(pais: Pais){
+    this.localPaises = JSON.parse(localStorage.getItem("paises"))
+            .filter( element => element.name != pais.nombre);
+    localStorage.setItem('paises',JSON.stringify(this.localPaises));
+    console.log("Remove array:"+this.localPaises);
   }
 
   // Metodo para realizar un post a una API REST
