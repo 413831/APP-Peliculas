@@ -1,2 +1,50 @@
+<div class="jumbotron jumbotron-fluid bg-light">
+    <div class="container">
+        <h1 class="display-3">Alta de actor</h1>
+        <hr>
+    </div>
+</div>
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+    </div>
+    <input type="text" [(ngModel)]='actor.nombre' class="form-control" aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default">
+</div>
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Apellido</span>
+    </div>
+    <input type="text" [(ngModel)]='actor.apellido' class="form-control" aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default">
+</div>
 
-<app-tabla-paises></app-tabla-paises>
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Sexo</span>
+    </div>
+    <input type="text" [(ngModel)]='pelicula.sexo' class="form-control" aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default">
+</div>
+
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Fecha de nacimiento</span>
+    </div>
+    <input type="date" [(ngModel)]='pelicula.fechaNacimiento' class="form-control" aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default">
+</div>
+
+<div class="form-group mb-3">
+    <hr>
+    <span>Subir pelicula</span>
+    <button type="file" class="btn btn-outline-dark btn-block">
+        <input [(ngModel)]='pelicula.foto' type="file" class="form-control-file"></button>
+    <hr>
+</div>
+<div> <h3>Elegir pais</h3>
+    
+    <app-tabla-paises [paises]='paises' (enviarPais)='seleccionarPais($event)'></app-tabla-paises>
+</div>
+
+<app-detalle-pais [pais]='pais'></app-detalle-pais>
