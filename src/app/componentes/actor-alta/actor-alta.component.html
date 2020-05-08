@@ -23,7 +23,7 @@
     <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-default">Sexo</span>
     </div>
-    <input type="text" [(ngModel)]='pelicula.sexo' class="form-control" aria-label="Sizing example input"
+    <input type="text" [(ngModel)]='actor.sexo' class="form-control" aria-label="Sizing example input"
         aria-describedby="inputGroup-sizing-default">
 </div>
 
@@ -31,20 +31,22 @@
     <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-default">Fecha de nacimiento</span>
     </div>
-    <input type="date" [(ngModel)]='pelicula.fechaNacimiento' class="form-control" aria-label="Sizing example input"
+    <input type="date" [(ngModel)]='actor.fechaNacimiento' class="form-control" aria-label="Sizing example input"
         aria-describedby="inputGroup-sizing-default">
 </div>
 
 <div class="form-group mb-3">
     <hr>
-    <span>Subir pelicula</span>
+    <span>Subir foto</span>
     <button type="file" class="btn btn-outline-dark btn-block">
-        <input [(ngModel)]='pelicula.foto' type="file" class="form-control-file"></button>
+        <input [(ngModel)]='actor.foto' type="file" class="form-control-file"></button>
     <hr>
 </div>
 <div> <h3>Elegir pais</h3>
-    
-    <app-tabla-paises [paises]='paises' (enviarPais)='seleccionarPais($event)'></app-tabla-paises>
+    <div *ngIf='!pais'>
+        <app-tabla-paises [paises]='paises' (enviarPais)='seleccionarPais($event)'></app-tabla-paises>
+    </div>
+    <div *ngIf='pais'>
+        <app-detalle-pais [pais]='pais'></app-detalle-pais>
+    </div>
 </div>
-
-<app-detalle-pais [pais]='pais'></app-detalle-pais>

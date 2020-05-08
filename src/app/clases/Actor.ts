@@ -7,4 +7,4 @@ export class Actor{
     public foto: String;
     public paisOrigen: String // Posiblemente objeto Pais
 
-}
+}   
